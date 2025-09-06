@@ -4,10 +4,10 @@ from pymongo import MongoClient
 app = Flask(__name__)
 
 # Connect to MongoDB Atlas (replace <uri> with your connection string)
-client = MongoClient(""mongodb+srv://pisher24_db_user:hV9aUERxMK9AlCnB@tute-dude-project-devop.niiczny.mongodb.net/?retryWrites=true&w=majority&appName=tute-dude-project-Devops"")
+client = MongoClient("mongodb+srv://pisher24_db_user:hV9aUERxMK9AlCnB@tute-dude-project-devop.niiczny.mongodb.net/?retryWrites=true&w=majority&appName=tute-dude-project-Devops")
 db = client["todo_db"]
 collection = db["items"]
-    
+
 @app.route('/submittodoitem', methods=['POST'])
 def submit_todo_item():
     data = request.get_json()
